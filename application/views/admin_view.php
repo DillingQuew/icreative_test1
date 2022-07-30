@@ -1,4 +1,5 @@
-<main class="container py-3 px-3">
+<div class="album py-5 bg-light">
+<main class="container py-3 px-3 bg-light">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -45,9 +46,15 @@
     <?php endwhile;?>
   </tbody>
 </table>
-<ul class="pagination">
-<?php for ($i = 1; $i<=$data[1]; $i++):?>
-   <a href="?pageno=<?= $i?>"> <?= $i?> </a> 
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center">
+  <ul class="pagination">
+  <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+  <?php for ($i = 1; $i<=$data[1]; $i++):?>
+      <li class="page-item"><a class="page-link" href="?pageno=<?= $i?>"> <?= $i?> </a></li>
    <?php endfor; ?>
-</ul>
+  </ul>
+</nav>
+
 </main>
+</div>

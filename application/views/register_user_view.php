@@ -1,3 +1,4 @@
+<div class="py-5 bg-light">
 <main class="form-signin" style="
   width: 100%;
   max-width: 330px;
@@ -35,3 +36,4 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегистрироваться</button>
   </form>
 </main>
+</div>

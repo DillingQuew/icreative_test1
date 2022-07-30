@@ -11,9 +11,11 @@ class Model_Admin extends Model
          // Присваиваем $pageno один
          $pageno = 1;
      }
-      
+     $pageno = stripslashes($pageno);
+     $pageno = htmlspecialchars($pageno);
+     $pageno = trim($pageno);
      // Назначаем количество данных на одной странице
-     $size_page = 3;
+     $size_page = 2;
      // Вычисляем с какого объекта начать выводить
      $offset = ($pageno-1) * $size_page;
 
@@ -94,16 +96,6 @@ class Model_Admin extends Model
        {
        exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
        }
-    // подключаемся к базе
-   
-   //  // проверка на существование пользователя с таким же логином
-   //     $result = mysqli_query($db, "SELECT id FROM `users` WHERE email = '$email'");
-   //    //  echo "{$result}";
-   //     $myrow = mysqli_fetch_array($result);
-   //    //  echo $myrow;
-   //     if (!empty($myrow['id'])) {
-   //     exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
-   //     }
        $result2 = mysqli_query($db, 
        "UPDATE users SET 
        fname='$fname', 
