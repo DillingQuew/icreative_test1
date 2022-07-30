@@ -5,7 +5,6 @@ class Controller_Logout extends Controller
 	{	
       session_destroy();
       Header("Location: /");
-		// $this->view->generate('logout_view.php', 'template_view.php');
 	}
 }
 ?>
