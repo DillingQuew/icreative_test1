@@ -75,6 +75,12 @@ class Model_Save_User extends Model
       
       if ($result2 == 'TRUE')
       {
+         $result = mysqli_query($db, "SELECT id FROM `users` WHERE email = '$email'");
+         
+         $myrow = mysqli_fetch_array($result);
+         $_SESSION['email']=$myrow['email']; 
+         $_SESSION['id']=$myrow['id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
+         $_SESSION['admin']=$myrow['is_admin'];
          Header("Location: /");
          // echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='/'>Главная страница</a>";
       }
